@@ -1,4 +1,8 @@
-This is your new Play application
-=================================
+# Play skeleton app
 
-This file will be packaged with your application, when using `activator dist`.
+TODO :
+- add routes for /search, /dictionary, /clustered
+- configure ES
+- create view templates : results, related links, facets
+- add bootstrap (or equivalent)
+- add text field for search input
