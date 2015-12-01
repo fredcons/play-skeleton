@@ -10,6 +10,8 @@ libraryDependencies ++= Seq(
   jdbc,
   cache,
   ws,
+  "com.sksamuel.elastic4s" %% "elastic4s-core" % "1.7.4",
+  "com.sksamuel.elastic4s" %% "elastic4s-jackson" % "1.7.4",
   specs2 % Test
 )
 
