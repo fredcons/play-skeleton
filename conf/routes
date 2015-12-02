@@ -9,13 +9,13 @@ GET     /                           controllers.Application.index
 GET     /search                           controllers.Search.index
 
 # Search page
-POST     /search                           controllers.Search.search
+POST     /search                           controllers.Search.doSearch
 
 # Dictionary page
 GET     /dictionary                           controllers.Dictionary.index
 
 # Dictionary page
-POST     /dictionary                           controllers.Dictionary.search
+POST     /dictionary                           controllers.Dictionary.doSearch
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)

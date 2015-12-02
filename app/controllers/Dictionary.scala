@@ -8,8 +8,8 @@ class Dictionary extends BaseController {
     Ok(views.html.dictionary())
   }
 
-  def search = Action {
-    Ok(views.html.search())
+  def doSearch = Action {
+    Ok(views.html.dictionary())
   }
 
 }

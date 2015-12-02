@@ -1,5 +1,14 @@
+@(documents: Array[Document])
+
 @main("Search") {
 
-    Search body
+    <h1>Search results</h1>
+    <ul>
+        @documents.map { document =>
+        <li>
+            @document.id / @document.title
+        </li>
+        }
+    </ul>
 
 }
