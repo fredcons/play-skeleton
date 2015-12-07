@@ -23,11 +23,5 @@ class BaseController extends Controller {
   val settings = Settings.settingsBuilder().put("cluster.name", clusterName).build()
   val client = ElasticClient.transport(settings, ElasticsearchClientUri(s"elasticsearch://$host:$port"))
 
-  val searchForm: Form[UserSearch] = Form(
-    mapping(
-      "keyword" -> text
-    )(UserSearch.apply)(UserSearch.unapply))
-
-
 
 }

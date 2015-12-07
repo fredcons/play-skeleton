@@ -1,27 +1,28 @@
-@(searchForm: Form[UserSearch], documents: Array[Document])
+@(searchForm: Form[UserSearch], documents: Array[Document])(implicit messages: Messages)
 
 @main("Search") {
 
-    @helper.form(action = controllers.Search.doSearch) {
-        @helper.inputText(searchForm("keyword"))
-    }
-
     <div class="row">
-        <div class="row">
-            <div class="col-lg-8"><h1>Search results</h1></div>
-            <div class="col-lg-4"></div>
+        <div class="col-lg-8">
+            @helper.form(action = routes.Search.doSearch) {
+                @helper.inputText(searchForm("keyword"))
+            }
         </div>
-
-        @documents.map { document =>
-        <div class="row">
-            <div class="col-lg-8">
-                @document.id / @document.title
-            </div>
-            <div class="col-lg-4"></div>
-        </div>
-        }
-
+        <div class="col-lg-4"></div>
     </div>
 
+    <div class="row">
+        <div class="col-lg-8"><h1>Search results</h1></div>
+        <div class="col-lg-4"></div>
+    </div>
+
+    @documents.map { document =>
+    <div class="row">
+        <div class="col-lg-8">
+            @document.id / @document.title
+        </div>
+        <div class="col-lg-4"></div>
+    </div>
+    }
 
 }

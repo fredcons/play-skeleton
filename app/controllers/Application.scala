@@ -6,7 +6,7 @@ import play.api.mvc._
 object Application extends BaseController {
 
   def index = Action {
-    Ok(views.html.search(searchForm, Array.empty[Document]))
+    Redirect("/search")
   }
 
 }
