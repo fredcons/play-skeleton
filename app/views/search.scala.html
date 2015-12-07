@@ -1,14 +1,27 @@
-@(documents: Array[Document])
+@(searchForm: Form[UserSearch], documents: Array[Document])
 
 @main("Search") {
 
-    <h1>Search results</h1>
-    <ul>
+    @helper.form(action = controllers.Search.doSearch) {
+        @helper.inputText(searchForm("keyword"))
+    }
+
+    <div class="row">
+        <div class="row">
+            <div class="col-lg-8"><h1>Search results</h1></div>
+            <div class="col-lg-4"></div>
+        </div>
+
         @documents.map { document =>
-        <li>
-            @document.id / @document.title
-        </li>
+        <div class="row">
+            <div class="col-lg-8">
+                @document.id / @document.title
+            </div>
+            <div class="col-lg-4"></div>
+        </div>
         }
-    </ul>
+
+    </div>
+
 
 }
