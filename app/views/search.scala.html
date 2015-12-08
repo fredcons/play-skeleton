@@ -3,6 +3,11 @@
 @main("Search") {
 
     <div class="row">
+        <div class="col-lg-8"><h1>Search results</h1></div>
+        <div class="col-lg-4"></div>
+    </div>
+
+    <div class="row">
         <div class="col-lg-8">
             @helper.form(action = routes.Search.doSearch) {
                 @helper.inputText(searchForm("keyword"))
@@ -11,10 +16,7 @@
         <div class="col-lg-4"></div>
     </div>
 
-    <div class="row">
-        <div class="col-lg-8"><h1>Search results</h1></div>
-        <div class="col-lg-4"></div>
-    </div>
+
 
     @documents.map { document =>
     <div class="row">
