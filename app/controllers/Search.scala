@@ -15,6 +15,8 @@ import play.api.i18n.Messages.Implicits._
 
 import com.sksamuel.elastic4s.jackson.ElasticJackson.Implicits._
 
+import models.SearchImplicits._
+
 object Search extends Controller {
 
   val config = ConfigFactory.load()
