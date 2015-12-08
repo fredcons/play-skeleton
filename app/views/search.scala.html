@@ -11,20 +11,36 @@
         <div class="col-lg-8">
             @helper.form(action = routes.Search.doSearch) {
                 @helper.inputText(searchForm("keyword"))
+                <button type="submit" name="search" id="search" class="btn btn-primary">Search</button>
             }
         </div>
         <div class="col-lg-4"></div>
     </div>
 
 
-
-    @documents.map { document =>
     <div class="row">
         <div class="col-lg-8">
-            @document.id / @document.title
+            Search results
         </div>
-        <div class="col-lg-4"></div>
+        <div class="col-lg-4">
+            Aggregations
+        </div>
     </div>
-    }
+
+    <div class="row">
+        <div class="col-lg-8">
+            <ul>
+            @documents.map { document =>
+              <li>@document.id / @document.title</li>
+            }
+            </ul>
+        </div>
+        <div class="col-lg-4">
+            <ul>
+
+            </ul>
+        </div>
+    </div>
+
 
 }
